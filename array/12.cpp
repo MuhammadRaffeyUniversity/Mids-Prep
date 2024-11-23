@@ -1,22 +1,26 @@
 // delete an element from an array
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main()
 {
     int arr[5] = {1, 2, 3, 4, 5};
+    int arrCopy[5];
     int x = 3;
+    int k = 0;
+
     for (int i = 0; i < 5; i++)
     {
-        if (arr[i] == x)
+        if (arr[i] != x)
         {
-            arr[i] = 0;
+            arrCopy[k] = arr[i];
+            k++;
         }
     }
-    for (int i = 0; i < 5; i++)
+
+    for (int i = 0; i < k; i++)
     {
-        cout << arr[i] << "\n";
+        cout << arrCopy[i] << "\n";
     }
 
     return 0;
